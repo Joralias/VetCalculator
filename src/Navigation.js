@@ -6,16 +6,24 @@ import { Navbar, NavItem, NavDropdown, Nav, MenuItem } from 'react-bootstrap';
 class Navigation extends Component {
   
   render() {
+    Navigation.proptypes ={ 
+      title: React.PropTypes.string,
+      }
+    
     const handleSelect = (selectedKey) => {
         alert('selected ' + selectedKey);
 
     }
 
+  let title = this.props.title
+
     return (
+      
+      
       <Navbar inverse>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Vet-Calculator</a>
+            <a href="#">{title}</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

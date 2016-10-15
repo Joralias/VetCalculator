@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 class App extends Component {
   render() {
     return (
-      <Navigation />
+      <Navigation title="Vet Calculator" />
 
     );
   }
