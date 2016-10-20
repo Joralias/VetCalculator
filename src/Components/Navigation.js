@@ -19,6 +19,10 @@ class Navigation extends Component {
     const onAbout = () => {
         window.location.href = '#about'
     }
+    const onHome = () => {
+        window.location.href = ''
+    }
+
 
   let title = this.props.title
   
@@ -47,7 +51,8 @@ class Navigation extends Component {
             </NavDropdown>
           </Nav>
           <Nav pullRight>
-            <NavItem eventKey={1} style={{display: displayDropdown}} onClick={onAbout} href="#about">About</NavItem>
+            <NavItem eventKey={1} style={{display: displayDropdown}} onClick={onHome} href="#home">Home</NavItem>
+            <NavItem eventKey={2} style={{display: displayDropdown}} onClick={onAbout} href="#about">About</NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

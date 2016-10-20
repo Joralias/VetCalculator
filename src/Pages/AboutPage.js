@@ -20,7 +20,7 @@ class AboutPage extends Component {
 
       <container>
         <div>
-          <Navigation title="Back" displayDropdown={false}/>
+          <Navigation title="Home" displayDropdown={false}/>
         </div>
         <div>
           <Jumbotron style={jumboStyle}>

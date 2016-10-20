@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MainPage from './Pages/MainPage'
 import AboutPage from './Pages/AboutPage'
+import SearchPage from './Pages/SearchPage'
 
 export default class App extends Component {
     state = { hash: '' }
@@ -23,7 +24,7 @@ export default class App extends Component {
         default:
             return <MainPage />
         case '':
-            return <MainPage />
+            return <SearchPage />
         case 'about':
             return <AboutPage />
         }
