@@ -41,9 +41,6 @@ class MainPage extends Component {
 
     let componentList = ['Aspirina', 'Ibuprofeno','Paracetamol']
 
-    let resultAlert = []
-
-
     const onCalculate = () => {
         let weight = parseInt(document.getElementById("formWeight").value,10)
         let concentration = panelData.props.concentration
