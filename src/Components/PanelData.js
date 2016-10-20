@@ -22,19 +22,18 @@ class PanelData extends Component {
 
         return(
             <div style={panelStyle}>
-                <Panel  header="Comertial Name">
+                <Panel id="comertial"  header="Comertial Name">
                     {this.props.comertialName}
                 </Panel>
-                <Panel header="Active Ingredient">
+                <Panel id="ingredient" header="Active Ingredient">
                     {this.props.activeIngredient}
                 </Panel>
-                <Panel header="Concentration">
+                <Panel id="concentration" header="Concentration">
                     {this.props.concentration} mg/ml
                 </Panel>
-                <Panel header="Dosis">
+                <Panel id="dosis" header="Dosis">
                     {this.props.dosis} mg/kg
                 </Panel>   
-
             </div>
                                    
         );

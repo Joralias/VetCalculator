@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, NavDropdown, Nav, MenuItem } from 'react-bootstrap';
 
-
 class Navigation extends Component {
 
   render() {
@@ -14,6 +13,7 @@ class Navigation extends Component {
     
     const handleSelect = (selectedKey) => {
         window.location.href = '#'+ selectedKey
+        
     }
 
     const onAbout = () => {

@@ -10,7 +10,7 @@ class SearchPage extends Component {
     let componentList = ['Aspirina', 'Ibuprofeno','Paracetamol']
 
     const onSearch = () => {
-        console.log( window.location.hash.substr(1))
+        console.log("Buscar en la base de datos")
 
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from '../Components/Navigation';
 import PanelData from '../Components/PanelData';
-import {Button, Form, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
+import {Alert, Button, Form, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
 
 
 class MainPage extends Component {
@@ -10,6 +10,7 @@ class MainPage extends Component {
       comertialName: '' ,
       concentration: '' ,
       dosis: '' ,
+      resultAlert:'',
   }
 
     componentDidMount() {
@@ -36,10 +37,29 @@ class MainPage extends Component {
 
 
   render() {
+    let panelData =  <PanelData comertialName={this.state.comertialName} activeIngredient={this.state.activeIngredient} concentration={this.state.concentration} dosis={this.state.dosis} />
+
     let componentList = ['Aspirina', 'Ibuprofeno','Paracetamol']
 
+    let resultAlert = []
+
+
     const onCalculate = () => {
-        console.log( window.location.hash.substr(1))
+        let weight = parseInt(document.getElementById("formWeight").value,10)
+        let concentration = panelData.props.concentration
+        let dosis = panelData.props.dosis
+        
+        let result = weight*dosis/concentration
+
+        this.setState({
+          resultAlert: <Alert bsStyle="info"><strong>Result: </strong>{result} ml</Alert>,
+          
+          })        
+        console.log( 'seteo el state')
+        console.log( this.state)
+
+        console.log( weight + ' ' +concentration + ' ' + ' ' + dosis)
+        console.log(result)
 
   }
 
@@ -50,7 +70,7 @@ class MainPage extends Component {
           <Navigation title="Vet Calculator" components={componentList} />
         </div>
         <div>
-          <PanelData comertialName={this.state.comertialName} activeIngredient={this.state.activeIngredient} concentration={this.state.concentration} dosis={this.state.dosis} />
+          {panelData}
         </div>
         <div>  
           <Form style={{margin:'1em'}}>
@@ -61,6 +81,9 @@ class MainPage extends Component {
               </FormGroup>
           </Form>                  
           <Button style={{margin:'1em'}} bsStyle="primary" onClick={onCalculate}>Calculate</Button>
+        </div>
+        <div>
+          {this.state.resultAlert}
         </div>
       </container>
 
