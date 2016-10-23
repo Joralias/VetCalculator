@@ -11,13 +11,17 @@ const app = express();
 app.set('port', (process.env.API_PORT || 3001));
 
 const COLUMNS = [
-  'carbohydrate_g',
-  'protein_g',
-  'fa_sat_g',
-  'fa_mono_g',
-  'fa_poly_g',
-  'kcal',
+  'lab',
+  'comertial_name',
+  'active_ingredient',
+  'concentration',
+  'units_con',
+  'dosis',
+  'units_dos',
   'description',
+  'species',
+  'calculable',
+  'posology'
 ];
 app.get('/api/medicine', (req, res) => {
   const param = req.query.q;
@@ -32,9 +36,9 @@ app.get('/api/medicine', (req, res) => {
   // WARNING: Not for production use! The following statement
   // is not protected against SQL injections.
   const r = db.exec(`
-    select ${COLUMNS.join(', ')} from entries
-    where description like '%${param}%'
-    limit 100
+    select ${COLUMNS.join(', ')} from meds
+    where active_ingredient like '%${param}%' or comertial_name like '%${param}%' or lab like '%${param}%'
+    limit 50
   `);
 
   if (r[0]) {

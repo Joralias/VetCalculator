@@ -10,8 +10,10 @@ class PanelData extends Component {
             comertialName: React.PropTypes.string,
             activeIngredient : React.PropTypes.string,
             concentration: React.PropTypes.float,
+            units_con: React.PropTypes.string,
             dosis: React.PropTypes.float,
-            
+            units_dos: React.PropTypes.string,
+
         }
 
         const panelStyle ={
@@ -29,10 +31,10 @@ class PanelData extends Component {
                     {this.props.activeIngredient}
                 </Panel>
                 <Panel id="concentration" header="Concentration">
-                    {this.props.concentration} mg/ml
+                    {this.props.concentration} {this.props.units_con}
                 </Panel>
                 <Panel id="dosis" header="Dosis">
-                    {this.props.dosis} mg/kg
+                    {this.props.dosis} {this.props.units_dos}
                 </Panel>   
             </div>
                                    

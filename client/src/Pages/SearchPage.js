@@ -23,8 +23,8 @@ class SearchPage extends Component {
         console.log(results)
 
         results.slice(0, MATCHING_ITEM_LIMIT).forEach((element, index) => {
-          let linkToMedicinePage = "#" + element.description
-          resultsItems.push(<ListGroupItem href={linkToMedicinePage} key={index}>{element.description}</ListGroupItem>)
+          let linkToMedicinePage = "#" + element.comertial_name
+          resultsItems.push(<ListGroupItem href={linkToMedicinePage} key={index}>{element.comertial_name}</ListGroupItem>)
          })
 
         this.setState({searchResultsItems:resultsItems})
